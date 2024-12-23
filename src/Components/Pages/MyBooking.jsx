@@ -145,8 +145,9 @@ const MyBooking = () => {
               <th className="p-4">Room Name</th>
               <th className="p-4">Price Per Night</th>
               <th className="p-4">Booking Date</th>
-              <th className="p-4">Actions</th>
+              
               <th className="p-4">Update Status</th>
+              <th className="p-4">Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -163,6 +164,18 @@ const MyBooking = () => {
                 <td className="p-4">${room.pricePerNight}</td>
                 <td className="p-4">{room.bookingDate}</td>
                 <td className="p-4">
+                  <select
+                    onChange={(e) => handleStatusUpdate(e, room._id)}
+                    defaultValue={room.status || "Change Status"}
+                    className="select select-accent w-full max-w-xs"
+                  >
+                    <option disabled>Change Status</option>
+                    <option value="Pending">Pending</option>
+                    <option value="Confirmed">Confirmed</option>
+                    <option value="Cancelled">Cancelled</option>
+                  </select>
+                </td>
+                <td className="p-4">
                   <button
                     onClick={() => handleCancel(room._id)}
                     className="bg-red-500 text-white py-1 px-3 rounded hover:bg-red-600"
@@ -177,21 +190,14 @@ const MyBooking = () => {
                     }}
                     className="bg-blue-500 text-white py-1 px-3 ml-2 rounded hover:bg-blue-600"
                   >
-                    Update
+                    Update Date
                   </button>
                 </td>
-                <td className="p-4">
-                  <select
-                    onChange={(e) => handleStatusUpdate(e, room._id)}
-                    defaultValue={room.status || "Change Status"}
-                    className="select select-accent w-full max-w-xs"
-                  >
-                    <option disabled>Change Status</option>
-                    <option value="Pending">Pending</option>
-                    <option value="Confirmed">Confirmed</option>
-                    <option value="Cancelled">Cancelled</option>
-                  </select>
-                </td>
+              
+
+
+
+
               </tr>
             ))}
           </tbody>
