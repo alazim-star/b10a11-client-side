@@ -6,7 +6,12 @@ import { IoIosRestaurant } from 'react-icons/io';
 
 const OurFacilities = () => {
     return (
-        <div className="mt-10 container mx-auto grid grid-cols-5 gap-5">
+    <div className='mt-10 mb-10'>
+           <h2 className="text-center text-4xl  mt-5 mb-5">
+       OUR <span className='text-[#af9556]'>FACILITIES</span> 
+      </h2>
+            <div className="mt-10 container mx-auto grid lg:grid-cols-5 gap-5">
+        
             {/* ROOM Facility */}
             <div className="flex flex-col items-center max-w-xs text-center">
                 <FaHotel className="w-20 h-20 mb-5 text-[#af9556]" />
@@ -52,6 +57,7 @@ const OurFacilities = () => {
                 </p>
             </div>
         </div>
+    </div>
     );
 };
 

@@ -14,12 +14,15 @@ import FeaturedRooms from './Components/HomPageShow/FeaturedRooms.jsx';
 import ViewDetails from './Components/Pages/ViewDetails.jsx';
 import AllRooms from './Components/Pages/AllRooms.jsx';
 import MyBooking from './Components/Pages/MyBooking.jsx';
+import ErrorPage from './Components/Pages/ErrorPage.jsx';
+import PrivateRoute from './Components/Pages/PrivateRoute.jsx';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
+    errorElement:<ErrorPage></ErrorPage>,
     children:[
       {
         path: "/",
@@ -61,7 +64,9 @@ const router = createBrowserRouter([
       },
       {
         path: "/myBooking",
-        element: <MyBooking></MyBooking>,
+        element: <PrivateRoute>
+          <MyBooking></MyBooking>,
+        </PrivateRoute>
         
       },
       

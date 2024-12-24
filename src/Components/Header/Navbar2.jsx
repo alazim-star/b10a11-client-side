@@ -6,11 +6,11 @@ const Navbar2 = () => {
         <div className='bg-[#af9556]'>
           
                 {/* Contact and Address */}
-                <div className="flex flex-col  sm:flex-row gap-4 sm:gap-10 items-center mx-auto container ml-96 ">
+                <div className="flex flex-row  lg:gap-4  items-center mx-auto container lg:ml-96 ">
                     <p className="text-sm ">
                         CALL NOW: <span className="font-bold">+1900 887 869</span>
                     </p>
-                    <p className="text-sm">No 1123, Marmora Road, Glasgow, D04 89GR</p>
+                    <p className="text-sm">11-12 North-South Road, Old Dhaka, Bangladesh</p>
                       {/* Language Selector */}
                 <div className="flex items-center gap-4">
                     <p className="text-sm">LNG</p>

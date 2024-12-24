@@ -79,7 +79,7 @@ const Navbar1 = () => {
         </button>
 
         {/* Logo and Title */}
-        <div className="flex items-center mr-20 lg:mr-0">
+        <div className="flex items-center mr-20 lg:mr-0 ">
           <h2 className="text-3xl font-bold">THE</h2>
           <img className="w-24 h-24" src={logo} alt="Logo" />
           <h2 className="text-3xl font-bold">PALACE</h2>
