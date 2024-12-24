@@ -26,7 +26,7 @@ const FeaturedRoomsCard = ({ room }) => {
       />
 
       {/* Hover Overlay */}
-      <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-4">
+      <div     onClick={handleSeeDetails} className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-4">
         <div className="text-center text-white">
           <p className="font-bold text-lg">{room.roomName}</p>
           <p className="text-sm">{room.maxOccupancy}</p>
