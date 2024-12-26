@@ -13,7 +13,7 @@ const Theme = () => {
     return (
         <div>
            <label onClick={switchTheme} className="swap swap-rotate">
-  {/* this hidden checkbox controls the state */}
+ 
   <input type="checkbox" className="theme-controller" value="synthwave" />
 
   {/* sun icon */}
