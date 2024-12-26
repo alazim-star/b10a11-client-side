@@ -8,10 +8,10 @@ const FeaturedRoomsCard = ({ room }) => {
 
   const handleSeeDetails = () => {
     if (user && user.email) {
-      // If user is logged in and has a valid email, navigate to the View Details page
+     
       navigate(`/viewDetails/${room._id}`);
     } else {
-      // Otherwise, navigate to the Login page with the intended route as state
+     
       navigate("/login", { state: { from: `/viewDetails/${room._id}` } });
     }
   };
