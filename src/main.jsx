@@ -16,6 +16,8 @@ import MyBooking from './Components/Pages/MyBooking.jsx';
 import ErrorPage from './Components/Pages/ErrorPage.jsx';
 import PrivateRoute from './Components/Pages/PrivateRoute.jsx';
 import AllRoomShorting from './Components/Pages/special/AllRoomShorting.jsx';
+import About from './Components/Pages/About.jsx';
+import ContactUs from './Components/Pages/ContactUs.jsx';
 
 
 const router = createBrowserRouter([
@@ -68,6 +70,16 @@ const router = createBrowserRouter([
       {
         path: "/allRooms",
         element: <AllRoomShorting></AllRoomShorting>,
+        
+      },
+      {
+        path: "/about",
+        element: <About></About>,
+        
+      },
+      {
+        path: "/contactUs",
+        element: <ContactUs></ContactUs>,
         
       },
       

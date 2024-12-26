@@ -11,15 +11,14 @@
 - **Guest Management**: Easy access to customer information, booking history, and preferences.
 - **Reservation Management**: Hotel staff can manage and update reservations, including check-ins and check-outs.
 - **Payment Gateway Integration**: Secure online payment processing for booking confirmations.
-- **Admin Dashboard**: A centralized dashboard for hotel staff to manage rooms, bookings, and services.
 - **Booking Confirmation & Notifications**: Automated email confirmations and reminders for customers about their bookings.
+- **Booking Confirmation & Modal**:  confirmations modal for customers about their bookings.
 
 ## Technologies Used
 - **Frontend**: React.js, Tailwind CSS, DaisyUI
 - **Backend**: Node.js, Express.js
 - **Database**: MongoDB
 - **Authentication**: JWT (JSON Web Tokens)
-- **Payment Gateway**: (Insert the payment service you are using, e.g., Stripe, PayPal)
 
 ## Installation
 react router,firebase,react testify,react icon,react simple type writer 
@@ -33,6 +32,7 @@ react router,firebase,react testify,react icon,react simple type writer
 Document link:https://docs.google.com/document/d/1d5UG3gjfwGknxlSFrMX5AszZFDMBQ6UAy9pDMmmGu34/edit?tab=t.0#heading=h.i22hzo8dczks
 
 Git-Hub Repository Link:https://github.com/programming-hero-web-course2/b10a11-client-side-alazim-star
-live site link:
+
+live clint-site link:
 
 

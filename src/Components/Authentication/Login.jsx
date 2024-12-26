@@ -127,7 +127,7 @@ const handleGoogleSignIn=()=>{
 <div className="relative inset-0">
   <img
     className=" object-cover lg:w-full  opacity-80 h-screen "
-    src="https://i.ibb.co/5Y745Zn/viaggi-stati-uniti-new-york-i-Stock-1225580270-1080x720.jpg"
+    src="https://i.ibb.co.com/rH7mrRg/15-g-signature-premium-family-room-standard.jpg"
     alt="Background"
   />
   <div className="absolute inset-0 bg-black bg-opacity-30"></div>

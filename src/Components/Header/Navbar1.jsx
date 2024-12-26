@@ -33,17 +33,20 @@ const Navbar1 = () => {
 
   const links = (
     <>
-      <NavLink to="/" className="hover:text-[#af9556] transition">
+      <NavLink to="/" className="hover:text-[#af9556] transition mx-4">
         Home
       </NavLink>
-      <NavLink to="/allRooms" className="hover:text-[#af9556] transition">
+      <NavLink to="/allRooms" className="hover:text-[#af9556] transition mx-4">
         All Rooms
       </NavLink>
-      <NavLink to="/myBooking" className="hover:text-[#af9556] transition">
+      <NavLink to="/myBooking" className="hover:text-[#af9556] transition mx-4">
         My Booking
       </NavLink>
-      <NavLink to="/login" className="hover:text-[#af9556] transition">
-        Login
+      <NavLink to="/about" className="hover:text-[#af9556] transition mx-4">
+        About
+      </NavLink>
+      <NavLink to="/contactUs" className="hover:text-[#af9556] transition mx-4">
+        Contact Us
       </NavLink>
     </>
   );
@@ -79,17 +82,17 @@ const Navbar1 = () => {
         </button>
 
         {/* Logo and Title */}
-        <div className="flex items-center mr-20 lg:mr-0 ">
+        <div className=" flex items-center mr-24">
           <h2 className="text-3xl font-bold">THE</h2>
-          <img className="w-24 h-24" src={logo} alt="Logo" />
+          <img className="w-24 h-24 mx-2" src={logo} alt="Logo" />
           <h2 className="text-3xl font-bold">PALACE</h2>
         </div>
 
         {/* Navigation Links */}
-        <div className="hidden sm:flex items-center gap-6 ml-5">{links}</div>
+        <div className="hidden sm:flex items-center">{links}</div>
 
-        {/* Login Button */}
-        <div className="navbar-end flex items-center lg:mr-5">
+        {/* Login/Logout Button and User Information */}
+        <div className=" items-center ">
           {loading ? (
             <p className="text-white">Loading...</p>
           ) : user ? (
