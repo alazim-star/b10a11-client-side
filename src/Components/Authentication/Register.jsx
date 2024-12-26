@@ -83,7 +83,7 @@ const Register = () => {
       <div className="card bg-base-100  max-w-lg p-10">
         <h2 className="text-2xl text-center font-bold">Register Your Account</h2>
         <form onSubmit={handleRegister} className="card-body">
-          {/* Name Section */}
+          {/*input Name Section */}
           <div className="form-control">
             <div className="flex space-x-4">
               <div>
@@ -106,7 +106,7 @@ const Register = () => {
             <input name="name" type="text" placeholder="Enter your name" className="input input-bordered w-[450px]" required />
           </div>
 
-          {/* Photo URL */}
+          {/*input Photo URL */}
           <div className="form-control">
             <label className="label">
               <span className="label-text">Photo URL</span>
@@ -114,7 +114,7 @@ const Register = () => {
             <input name="photo" type="text" placeholder="Photo URL (Optional)" className="input  w-[450px] input-bordered" />
           </div>
 
-          {/* Email */}
+          {/*input Email */}
           <div className="form-control">
             <label className="label">
               <span className="label-text">Email</span>
@@ -122,7 +122,7 @@ const Register = () => {
             <input name="email" type="email" placeholder="Enter your email" className=" w-[450px] input input-bordered" required />
           </div>
 
-          {/* Password */}
+          {/*input Password */}
           <div className="form-control">
             <label className="label">
               <span className="label-text">Password</span>
