@@ -1,6 +1,7 @@
+# Assignment Name: b10a11-client-side (modern Hotel Booking Platform)
 ## assignment_category_03
 
-# The Grand Palace 
+# The Grand Palace
 
 ## Overview
 **The Grand Palace** is a luxurious and user-friendly web application designed to manage hotel bookings, room availability, and guest services. The application provides an easy interface for customers to check room availability, make reservations, and manage their bookings. It also helps hotel management efficiently handle bookings, room assignments, and guest requests.
@@ -29,10 +30,10 @@ react router,firebase,react testify,react icon,react simple type writer
 - [MongoDB](https://www.mongodb.com/) (or use a cloud solution like MongoDB Atlas)
 
 
-Document link:https://docs.google.com/document/d/1d5UG3gjfwGknxlSFrMX5AszZFDMBQ6UAy9pDMmmGu34/edit?tab=t.0#heading=h.i22hzo8dczks
+# Document link:https://docs.google.com/document/d/1d5UG3gjfwGknxlSFrMX5AszZFDMBQ6UAy9pDMmmGu34/edit?tab=t.0#heading=h.i22hzo8dczks
 
-Git-Hub Repository Link:https://github.com/programming-hero-web-course2/b10a11-client-side-alazim-star
+# Git-Hub Repository Link:https://github.com/programming-hero-web-course2/b10a11-client-side-alazim-star
 
-live clint-site link:
+# live clint-site link:
 
 

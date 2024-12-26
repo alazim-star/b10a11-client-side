@@ -20,7 +20,7 @@ const MyBooking = () => {
   // Fetch the bookings for the user
   useEffect(() => {
     // if (user?.email) {
-    //   fetch(`http://localhost:5000/bookings/${user.email}`)
+    //   fetch(`https://b10a11-server-side-gray.vercel.app/bookings/${user.email}`)
     //     .then((res) => res.json())
     //     .then((data) => {
     //       setBookings(data);
@@ -30,7 +30,7 @@ const MyBooking = () => {
     // }
 
 
-    axios.get(`http://localhost:5000/bookings/${user.email}`,{ withCredentials: true })
+    axios.get(`https://b10a11-server-side-gray.vercel.app/bookings/${user.email}`,{ withCredentials: true })
     .then(res => {
       setBookings(res.data);          
       
@@ -59,12 +59,12 @@ const MyBooking = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/bookings/${id}`, { method: "DELETE" })
+        fetch(`https://b10a11-server-side-gray.vercel.app/bookings/${id}`, { method: "DELETE" })
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount > 0) {
               Swal.fire("Deleted!", "Your booking has been removed.", "success");
-              fetch(`http://localhost:5000/bookings/${user.email}`)
+              fetch(`https://b10a11-server-side-gray.vercel.app/bookings/${user.email}`)
                 .then((res) => res.json())
                 .then((data) => {
                   setBookings(data);
@@ -81,7 +81,7 @@ const MyBooking = () => {
   // Handle updating a booking's date
   const handleUpdateBooking = () => {
     const formattedDate = selectedDate.toLocaleDateString();
-    fetch(`http://localhost:5000/bookings/${selectedBooking._id}`, {
+    fetch(`https://b10a11-server-side-gray.vercel.app/bookings/${selectedBooking._id}`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ bookingDate: formattedDate }),
@@ -123,7 +123,7 @@ const MyBooking = () => {
 
     };
 
-    fetch("http://localhost:5000/reviews", {
+    fetch("https://b10a11-server-side-gray.vercel.app/reviews", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(reviewData),

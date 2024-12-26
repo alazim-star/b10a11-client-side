@@ -23,7 +23,7 @@ const ViewDetails = () => {
   // Fetch reviews when room id is available
   useEffect(() => {
     if (room && room._id) {
-      fetch(`http://localhost:5000/reviews/${room._id}`)
+      fetch(`https://b10a11-server-side-gray.vercel.app/reviews/${room._id}`)
         .then(res => res.json())
         .then(data => {
           if (Array.isArray(data)) {
@@ -52,7 +52,7 @@ const ViewDetails = () => {
 
     setIsSubmitting(true);
 
-    fetch('http://localhost:5000/bookings', {
+    fetch('https://b10a11-server-side-gray.vercel.app/bookings', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(bookingData),
@@ -86,7 +86,7 @@ const ViewDetails = () => {
       timestamp: new Date(),
     };
 
-    fetch('http://localhost:5000/reviews', {
+    fetch('https://b10a11-server-side-gray.vercel.app/reviews', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(reviewData),

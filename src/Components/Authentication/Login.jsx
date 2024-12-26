@@ -25,7 +25,7 @@ const Login = () => {
 
         signInUser(email, password)
             .then((result) => {
-                console.log(result.user.email);
+                // console.log(result.user.email);
                 const user={email:email}
                 toast.success("Login successful!", {
                     position: "top-right",
@@ -37,15 +37,15 @@ const Login = () => {
                 // navigate(location?.state || "/"); 
 
                     // for jwt token 
-axios.post('http://localhost:5000/jwt',user,{withCredentials:true})
+axios.post('https://b10a11-server-side-gray.vercel.app/jwt',user,{withCredentials:true})
 .then(res=>{
-  console.log(res.data);
+//   console.log(res.data);
 })
               
             })
 
             .catch((error) => {
-                console.error("ERROR:", error.message);
+                // console.error("ERROR:", error.message);
                 setError(error.message); 
                 toast.error("Login failed: " + error.message, {
                     position: "top-right",
@@ -62,7 +62,7 @@ axios.post('http://localhost:5000/jwt',user,{withCredentials:true})
 
 
       const loginInfo ={email,lastSignInTime}
-      fetch(`http://localhost:5000/clients`,{
+      fetch(`https://b10a11-server-side-gray.vercel.app/clients`,{
         method:'PATCH',
         headers:{
             'content-type':'application/json'
@@ -75,7 +75,7 @@ axios.post('http://localhost:5000/jwt',user,{withCredentials:true})
     })
     
       .catch(error=>{
-        console.log(error);
+        // console.log(error);
       })
     
     
@@ -99,7 +99,7 @@ axios.post('http://localhost:5000/jwt',user,{withCredentials:true})
                     });
                 })
                 .catch((error) => {
-                    console.error("ERROR:", error.message);
+                    // console.error("ERROR:", error.message);
                     toast.error("Failed to send password reset email: " + error.message, {
                         position: "top-right",
                         autoClose: 3000,
@@ -116,7 +116,7 @@ const handleGoogleSignIn=()=>{
         navigate('/')
     })
     .catch((error) => {
-        console.error("ERROR:", error.message);
+        // console.error("ERROR:", error.message);
        
     });
 }

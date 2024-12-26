@@ -33,7 +33,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <FeaturedRooms></FeaturedRooms>,
-        loader:()=>fetch('http://localhost:5000/room'),
+        loader:()=>fetch('https://b10a11-server-side-gray.vercel.app/room'),
       },
      ]  
         
@@ -53,7 +53,7 @@ const router = createBrowserRouter([
         path: "/viewDetails/:id",
         element: <ViewDetails></ViewDetails>,
         loader: async ({ params }) => {
-          const res = await fetch(`http://localhost:5000/room`);
+          const res = await fetch(`https://b10a11-server-side-gray.vercel.app/room`);
           const data = await res.json();
           const singleData = data.find(d => d._id === params.id);
           return singleData; 

@@ -9,7 +9,7 @@ const AllRoomShorting = () => {
  
   const fetchRooms = () => {
     axios
-      .get("http://localhost:5000/room") 
+      .get("https://b10a11-server-side-gray.vercel.app/room") 
       .then((res) => {
         setRooms(res.data); 
       })

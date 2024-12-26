@@ -9,7 +9,7 @@ const ReviewShort = () => {
 
   const fetchReviews = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/reviews'); 
+      const response = await axios.get('https://b10a11-server-side-gray.vercel.app/reviews'); 
       console.log('Fetched reviews:', response.data);
 
       if (response.data && response.data.length > 0) {

@@ -39,7 +39,7 @@ const Register = () => {
       const newClient = { name, email, createdAt };
 
       // Save user to database
-      const response = await fetch('http://localhost:5000/clients', {
+      const response = await fetch('https://b10a11-server-side-gray.vercel.app/clients', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -60,7 +60,7 @@ const Register = () => {
       navigate('/');
 
     } catch (error) {
-      console.error("Registration failed:", error.message);
+      // console.error("Registration failed:", error.message);
       toast.error("Registration failed: " + error.message);
     }
   };
@@ -71,7 +71,7 @@ const Register = () => {
       toast.success("Google Sign-In successful!");
       navigate('/');
     } catch (error) {
-      console.error("Google Sign-In failed:", error.message);
+      // console.error("Google Sign-In failed:", error.message);
       toast.error("Google Sign-In failed: " + error.message);
     }
   };

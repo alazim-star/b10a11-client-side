@@ -15,7 +15,7 @@ const ContactUs = () => {
     // Form data to be sent to the backend
     const contactData = { name, email, message };
 
-    fetch('http://localhost:5000/contact', {
+    fetch('https://b10a11-server-side-gray.vercel.app/contact', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(contactData),
