@@ -75,6 +75,7 @@ const Register = () => {
       toast.error("Google Sign-In failed: " + error.message);
     }
   };
+  
 
   return (
     <div className="items-center min-h-screen flex justify-center ">

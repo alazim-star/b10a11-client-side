@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import { AuthContext } from '../AuthProvider/AuthProvider';
+import axios from 'axios';
 
 
 
@@ -13,7 +14,7 @@ const Login = () => {
     const location = useLocation();
     const [error, setError] = useState("");
     const navigate = useNavigate();
-    const { signInUser, signInWithGoogle } = useContext(AuthContext);
+    const { signInUser, signInWithGoogle} = useContext(AuthContext);
     const emailRef = useRef();
     const auth = getAuth();
 
@@ -26,7 +27,8 @@ const Login = () => {
 
         signInUser(email, password)
             .then((result) => {
-                // console.log(result.user);
+                console.log(result.user.email);
+                const user={email:email}
                 toast.success("Login successful!", {
                     position: "top-right",
                     autoClose: 3000,
@@ -34,9 +36,42 @@ const Login = () => {
                   
                 });
                 e.target.reset();
-                navigate(location?.state || "/"); 
+                // navigate(location?.state || "/"); 
+
+
+
+
+
+                    // for jwt token 
+axios.post('http://localhost:5000/jwt',user,{withCredentials:true})
+.then(res=>{
+  console.log(res.data);
+})
+
+
                     
             })
+
+
+
+            // if(currentUser?.email){
+            //     const user={email:currentUser.email}
+            // axios.post('http://localhost:5000/jwt',user)
+            // .then(res=>console.log(res.data))
+            // }
+            // else{
+            //     axios.post('http://localhost:5000/logout',{},{
+            //         withCredentials:true
+            //     })
+            //     .then(res=>console.log('logout',res.data))
+            // }
+            
+
+
+
+
+
+
             .catch((error) => {
                 console.error("ERROR:", error.message);
                 setError(error.message); 
@@ -46,7 +81,10 @@ const Login = () => {
 
                 });
             });   
-                           
+    
+      navigate(location?.state|| '/')      
+
+
                 // update last login time 
       const lastSignInTime=result?.user?.metadata?.lastSignInTime
 

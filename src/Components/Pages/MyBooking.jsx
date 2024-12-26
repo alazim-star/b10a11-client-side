@@ -3,6 +3,7 @@ import Swal from "sweetalert2";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import axios from "axios";
 
 const MyBooking = () => {
   const { user } = useContext(AuthContext);
@@ -12,19 +13,41 @@ const MyBooking = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedBooking, setSelectedBooking] = useState(null);
   const [selectedDate, setSelectedDate] = useState(new Date());
+  const [reviewModalOpen, setReviewModalOpen] = useState(false);
+  const [rating, setRating] = useState(null);
+  const [comment, setComment] = useState("");
 
+  // Fetch the bookings for the user
   useEffect(() => {
-    if (user?.email) {
-      fetch(`http://localhost:5000/bookings/${user.email}`)
-        .then((res) => res.json())
-        .then((data) => {
-          setBookings(data);
-          setFilteredBookings(data);
-        })
-        .catch((err) => console.error("Error fetching bookings:", err));
-    }
+    // if (user?.email) {
+    //   fetch(`http://localhost:5000/bookings/${user.email}`)
+    //     .then((res) => res.json())
+    //     .then((data) => {
+    //       setBookings(data);
+    //       setFilteredBookings(data);
+    //     })
+    //     .catch((err) => console.error("Error fetching bookings:", err));
+    // }
+
+
+    axios.get(`http://localhost:5000/bookings/${user.email}`,{ withCredentials: true })
+    .then(res => {
+      setBookings(res.data);          
+      
+      setFilteredBookings(res.data); 
+      
+    })
+   
+
+
+
+
+
+
+
   }, [user]);
 
+  // Handle canceling a booking
   const handleCancel = (id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -41,7 +64,6 @@ const MyBooking = () => {
           .then((data) => {
             if (data.deletedCount > 0) {
               Swal.fire("Deleted!", "Your booking has been removed.", "success");
-              // Refetch the bookings data after deleting
               fetch(`http://localhost:5000/bookings/${user.email}`)
                 .then((res) => res.json())
                 .then((data) => {
@@ -56,31 +78,7 @@ const MyBooking = () => {
     });
   };
 
-  const updateBookingState = (id, updatedFields = {}) => {
-    setBookings((prev) =>
-      prev.map((room) =>
-        room._id === id ? { ...room, ...updatedFields } : room
-      )
-    );
-    setFilteredBookings((prev) =>
-      prev.map((room) =>
-        room._id === id ? { ...room, ...updatedFields } : room
-      )
-    );
-  };
-
-  const handleSearch = () => {
-    const filtered = bookings.filter((room) =>
-      room.roomName.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-    setFilteredBookings(filtered);
-  };
-
-  const handleReset = () => {
-    setFilteredBookings(bookings);
-    setSearchTerm("");
-  };
-
+  // Handle updating a booking's date
   const handleUpdateBooking = () => {
     const formattedDate = selectedDate.toLocaleDateString();
     fetch(`http://localhost:5000/bookings/${selectedBooking._id}`, {
@@ -92,28 +90,70 @@ const MyBooking = () => {
       .then((data) => {
         if (data.modifiedCount > 0) {
           Swal.fire("Updated!", "Booking date updated successfully.", "success");
-          updateBookingState(selectedBooking._id, { bookingDate: formattedDate });
+          setBookings((prev) =>
+            prev.map((room) =>
+              room._id === selectedBooking._id
+                ? { ...room, bookingDate: formattedDate }
+                : room
+            )
+          );
+          setFilteredBookings((prev) =>
+            prev.map((room) =>
+              room._id === selectedBooking._id
+                ? { ...room, bookingDate: formattedDate }
+                : room
+            )
+          );
           setIsModalOpen(false);
         }
       })
       .catch((err) => console.error("Error updating booking date:", err));
   };
 
-  const handleStatusUpdate = (e, id) => {
-    const status = e.target.value;
-    fetch(`http://localhost:5000/bookings/${id}`, {
-      method: "PATCH",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({ status }),
+  // Handle review submission
+  const handleReviewSubmit = (e) => {
+    e.preventDefault();
+    const reviewData = {
+      email: user?.email || "No Email Provided",
+      roomName: selectedBooking.roomName,
+      comment,
+      rating,
+      timestamp: new Date().toISOString(),
+      
+
+    };
+
+    fetch("http://localhost:5000/reviews", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(reviewData),
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.modifiedCount > 0) {
-          Swal.fire("Updated!", "Booking status updated successfully.", "success");
-          updateBookingState(id, { status });
+        if (data.insertedId) {
+          Swal.fire("Success", "Review submitted successfully", "success");
+          setReviewModalOpen(false);
+          setComment("");
+          setRating(null);
         }
       })
-      .catch((err) => console.error("Error updating status:", err));
+      .catch(() => {
+        Swal.fire("Error", "Something went wrong. Try again later.", "error");
+      });
+  };
+
+  // Handle search functionality
+  const handleSearch = () => {
+    const filtered = bookings.filter((room) =>
+      room.roomName.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    setFilteredBookings(filtered);
+  };
+
+  // Handle reset functionality
+  const handleReset = () => {
+    setFilteredBookings(bookings);
+    setSearchTerm("");
   };
 
   return (
@@ -141,40 +181,27 @@ const MyBooking = () => {
         <table className="table-auto w-full bg-white shadow-lg rounded-md">
           <thead>
             <tr className="text-left">
-              <th className="p-4">Room Image</th>
-              <th className="p-4">Room Name</th>
+              <th className="p-4">Room Details</th>
               <th className="p-4">Price Per Night</th>
               <th className="p-4">Booking Date</th>
-              
-              <th className="p-4">Update Status</th>
               <th className="p-4">Actions</th>
             </tr>
           </thead>
           <tbody>
             {filteredBookings.map((room) => (
               <tr key={room._id} className="border-b">
-                <td className="p-4">
+                <td className="p-4 flex items-center gap-4">
                   <img
                     src={room.photoUrl}
                     alt="Room"
                     className="w-16 h-16 object-cover rounded-md"
                   />
+                  <div>
+                    <p className="font-medium">{room.roomName}</p>
+                  </div>
                 </td>
-                <td className="p-4">{room.roomName}</td>
                 <td className="p-4">${room.pricePerNight}</td>
                 <td className="p-4">{room.bookingDate}</td>
-                <td className="p-4">
-                  <select
-                    onChange={(e) => handleStatusUpdate(e, room._id)}
-                    defaultValue={room.status || "Change Status"}
-                    className="select select-accent w-full max-w-xs"
-                  >
-                    <option disabled>Change Status</option>
-                    <option value="Pending">Pending</option>
-                    <option value="Confirmed">Confirmed</option>
-                    <option value="Cancelled">Cancelled</option>
-                  </select>
-                </td>
                 <td className="p-4">
                   <button
                     onClick={() => handleCancel(room._id)}
@@ -192,12 +219,16 @@ const MyBooking = () => {
                   >
                     Update Date
                   </button>
+                  <button
+                    onClick={() => {
+                      setSelectedBooking(room);
+                      setReviewModalOpen(true);
+                    }}
+                    className="bg-green-500 text-white py-1 px-3 ml-2 rounded hover:bg-green-600"
+                  >
+                    Review
+                  </button>
                 </td>
-              
-
-
-
-
               </tr>
             ))}
           </tbody>
@@ -206,6 +237,7 @@ const MyBooking = () => {
         <p className="text-gray-600">No bookings found for your search.</p>
       )}
 
+      {/* Modal to update booking */}
       {isModalOpen && selectedBooking && (
         <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center">
           <div className="bg-white p-6 rounded-lg shadow-lg w-96">
@@ -233,6 +265,63 @@ const MyBooking = () => {
                   className="bg-blue-600 text-white py-2 px-6 rounded hover:bg-blue-700"
                 >
                   Update Confirm
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+
+      {/* Review Modal */}
+      {reviewModalOpen && selectedBooking && user && (
+        <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center">
+          <div className="bg-white p-6 rounded-lg shadow-lg w-96">
+            <h3 className="text-2xl font-semibold mb-4">Give a Review</h3>
+            <form onSubmit={handleReviewSubmit} className="space-y-4">
+              <div>
+                <label>User Email</label>
+                <input
+                  type="email"
+                  value={user?.email}
+                  disabled
+                  className="input input-bordered w-full bg-gray-200"
+                />
+              </div>
+              <div>
+                <label>Rating</label>
+                <input
+                  type="number"
+                  min="1"
+                  max="5"
+                  value={rating}
+                  onChange={(e) => setRating(e.target.value)}
+                  className="input input-bordered w-full"
+                  required
+                />
+              </div>
+              <div>
+                <label>Comment</label>
+                <textarea
+                  className="textarea textarea-bordered w-full"
+                  placeholder="Write your review here"
+                  value={comment}
+                  onChange={(e) => setComment(e.target.value)}
+                  required
+                />
+              </div>
+              <div className="flex justify-end space-x-4">
+                <button
+                  type="button"
+                  onClick={() => setReviewModalOpen(false)}
+                  className="bg-gray-300 py-2 px-4 rounded hover:bg-gray-400"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  className="bg-green-600 text-white py-2 px-6 rounded hover:bg-green-700"
+                >
+                  Submit Review
                 </button>
               </div>
             </form>

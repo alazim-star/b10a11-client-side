@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Link } from "react-router-dom";
 import { Typewriter } from "react-simple-typewriter";
+import { motion } from 'framer-motion';
 
 const Banner = () => {
   const [showModal, setShowModal] = useState(false);
@@ -96,6 +97,7 @@ const Banner = () => {
           Book Now
         </button>
       </Link>
+
     </div>
   </div>
 )}

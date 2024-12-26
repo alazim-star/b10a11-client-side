@@ -12,10 +12,10 @@ import Login from './Components/Authentication/Login.jsx';
 import Register from './Components/Authentication/Register.jsx';
 import FeaturedRooms from './Components/HomPageShow/FeaturedRooms.jsx';
 import ViewDetails from './Components/Pages/ViewDetails.jsx';
-import AllRooms from './Components/Pages/AllRooms.jsx';
 import MyBooking from './Components/Pages/MyBooking.jsx';
 import ErrorPage from './Components/Pages/ErrorPage.jsx';
 import PrivateRoute from './Components/Pages/PrivateRoute.jsx';
+import AllRoomShorting from './Components/Pages/special/AllRoomShorting.jsx';
 
 
 const router = createBrowserRouter([
@@ -57,16 +57,17 @@ const router = createBrowserRouter([
           return singleData; 
         },
       },
-      {
-        path: "/allRooms",
-        element: <AllRooms></AllRooms>,
-        loader:()=>fetch('http://localhost:5000/room'),
-      },
+     
       {
         path: "/myBooking",
         element: <PrivateRoute>
           <MyBooking></MyBooking>,
         </PrivateRoute>
+        
+      },
+      {
+        path: "/allRooms",
+        element: <AllRoomShorting></AllRoomShorting>,
         
       },
       
