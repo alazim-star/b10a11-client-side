@@ -36,7 +36,6 @@ const Footer = () => {
                 <li>About Hotel</li>
                 <li>Rooms & Sui</li>
                 <li>Reservation</li>
-                <li>News & Blog</li>
                 <li>Contact</li>
               </ul>
             </div>
@@ -59,7 +58,7 @@ const Footer = () => {
               <h4 className="text-lg font-semibold mb-4">NEWSLETTER</h4>
               <p className="text-gray-400 mb-4">Subscribe to our Newsletter</p>
               <div>
-                {/* Replace with your newsletter form */}
+            
                 <form>
                   <input
                     type="email"
