@@ -8,8 +8,6 @@ import { ToastContainer } from "react-toastify";
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import axios from 'axios';
 
-
-
 const Login = () => {
     const location = useLocation();
     const [error, setError] = useState("");
@@ -38,18 +36,12 @@ const Login = () => {
                 e.target.reset();
                 // navigate(location?.state || "/"); 
 
-
-
-
-
                     // for jwt token 
 axios.post('http://localhost:5000/jwt',user,{withCredentials:true})
 .then(res=>{
   console.log(res.data);
 })
-
-
-                    
+              
             })
 
             .catch((error) => {
