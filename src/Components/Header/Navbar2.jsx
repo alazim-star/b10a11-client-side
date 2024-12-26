@@ -8,7 +8,7 @@ const Navbar2 = () => {
                 {/* Contact and Address */}
                 <div className="flex flex-row  lg:gap-4  items-center mx-auto container lg:ml-96 ">
                     <p className="text-sm ">
-                        CALL NOW: <span className="font-bold">+1900 887 869</span>
+                        CALL NOW: <span className="font-bold">+1900 849 867</span>
                     </p>
                     <p className="text-sm">11-12 North-South Road, Old Dhaka, Bangladesh</p>
                       {/* Language Selector */}
