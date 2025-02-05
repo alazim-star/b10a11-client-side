@@ -44,7 +44,7 @@ The Grand Palace is a luxurious and user-friendly web application designed to ma
 <div align="center">
   <table>
     <tr>
-      <td><img src="https://i.ibb.co.com/S4gCWsBj/ad.jpg" width="300" alt="The Grand Palace"></td>
+      <td><img src="https://i.ibb.co.com/4ZnT6vj0/a.jpg" width="300" alt="The Grand Palace"></td>
     </tr>
   </table>
 </div>
