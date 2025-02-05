@@ -44,7 +44,8 @@ The Grand Palace is a luxurious and user-friendly web application designed to ma
 <div align="center">
   <table>
     <tr>
-      <td><img src="https://i.ibb.co.com/4wR0MH9m/dd.jpg" width="300" alt="Lingo Bingo Screenshot 2"></td>
+      <td><img src="https://i.ibb.co.com/V0kwTzZG/az.jpg" width="300" alt="The Grand Palace"></td>
+      <td><img src="https://i.ibb.co.com/4wR0MH9m/dd.jpg" width="300" alt="The Grand Palace"></td>
     </tr>
   </table>
 </div>
@@ -67,7 +68,7 @@ react router,firebase,react testify,react icon,react simple type writer
 
 ```bash
 # Clone the repository
-git clone 
+git clone https://github.com/alazim-star/b10a11-client-side.git
 
 # Install dependencies
 npm install
