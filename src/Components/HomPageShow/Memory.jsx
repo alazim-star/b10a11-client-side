@@ -1,4 +1,5 @@
 import React from 'react';
+import SectionTitle from '../sheard/SectionTitle';
 
 const Memory = () => {
     const images = [
@@ -31,13 +32,14 @@ const Memory = () => {
     ];
 
     return (
-        <div className="container mx-auto my-10 px-4">
-            <h1 className="text-center text-4xl font-bold mb-8 text-[#af9556]">Memorable Moments</h1>
+        <div className="container mx-auto mt-10 mb-10">
+           
+        <div className='mb-10'>  <SectionTitle subheading='Moments'heading='Memorable'></SectionTitle></div>
             <div className="grid grid-cols-4  gap-6">
                 {images.map((image, index) => (
                     <div
                         key={index}
-                        className={`relative overflow-hidden rounded-lg shadow-lg group border border-[#af9556] ${image.colSpan} ${image.rowSpan}`}
+                        className={`relative overflow-hidden rounded-xl shadow-lg group border border-[#af9556] ${image.colSpan} ${image.rowSpan}`}
                     >
                         <img
                             src={image.src}

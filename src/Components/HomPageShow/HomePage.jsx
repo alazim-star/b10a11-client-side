@@ -14,7 +14,7 @@ const HomePage = () => {
                 whileHover={{ scale: 1.1 }} // Scale up on hover
                 whileTap={{ scale: 0.9 }} // Scale down on click
                 onClick={scrollToTop}
-                className="mt-6 px-8 py-3 text-white bg-[#af9556] rounded-full flex items-center justify-center"
+                className="mt-6 px-8 py-3 text-white bg-primary rounded-full flex items-center justify-center"
             >
                 <FaArrowUp className="mr-2" />
                 Go to Top

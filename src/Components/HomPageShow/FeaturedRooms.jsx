@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 
 import FeaturedRoomsCard from './FeaturedRoomsCard';
+import SectionTitle from '../sheard/SectionTitle';
 
 const FeaturedRooms = () => {
     const loadedRooms = useLoaderData(); 
@@ -13,20 +14,26 @@ const FeaturedRooms = () => {
     const roomsToShow = rooms.slice(0, 6);
 
     return (
-        <div>
+        <div className='mt-10 '>
              <div>
-      <h2 className="text-center text-4xl  mt-5 mb-5">
-       OUR <span className='text-[#af9556]'>TOP-RATED</span> ROOMS & SUITES
+      <h2 className="text-center text-4xl  ">
+       OUR TOP-<span className='text-[#af9556]'>RATED ROOMS</span>  & SUITES
       </h2>
-      <h3 className="text-center text-xl  font-bold text-red-600  mb-20">
-        <Typewriter
-         words={[
-          "Luxurious Stays!",
-          "Unmatched Comfort!",
-          "Exclusive Deals!",
-          "Your Perfect Getaway!",
-        ]}
-          loop={5} 
+
+
+      <h3 className="text-center text-xl   text-[#af9556]  mb-10">
+      <Typewriter
+  words={[
+    "Elegant Escapes Await!",
+    "Indulge in Ultimate Luxury!",
+    "Unveil the Perfect Stay!",
+    "Where Comfort Meets Class!",
+    "Exclusive Offers Just for You!",
+    "Discover Your Dream Getaway!",
+    "Unrivaled Hospitality Awaits!",
+    "Stay in Style, Live in Luxury!",
+  ]}
+          loop={Infinity} 
           cursor
           cursorStyle="|"
           typeSpeed={70}

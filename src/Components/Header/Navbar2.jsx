@@ -23,7 +23,7 @@ const Navbar2 = () => {
         <div className="flex items-center gap-4">
           <p className="text-sm">LNG</p>
           <select
-            className="bg-[#af9556] h-10 border border-[#af9556] px-2 text-sm rounded-md focus:outline-none focus:ring-2 focus:ring-[#af9556]"
+            className="bg-primary h-10 border border-[#af9556] px-2 text-sm rounded-md focus:outline-none focus:ring-2 focus:ring-[#af9556]"
             aria-label="Language Selector"
             onChange={changeLanguage}
             value={i18n.language}

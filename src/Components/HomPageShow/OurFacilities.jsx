@@ -3,17 +3,17 @@ import { BiBowlHot } from 'react-icons/bi';
 import { FaHotel, FaWifi } from "react-icons/fa";
 import { GiBalloons } from 'react-icons/gi';
 import { IoIosRestaurant } from 'react-icons/io';
+import SectionTitle from '../sheard/SectionTitle';
 
 const OurFacilities = () => {
     return (
     <div className='mt-10 mb-10'>
-           <h2 className="text-center text-4xl  mt-5 mb-5">
-       OUR <span className='text-[#af9556]'>FACILITIES</span> 
-      </h2>
+      
+      <SectionTitle subheading="FACILITIES"  heading=' OUR'></SectionTitle>
             <div className="mt-10 container mx-auto grid lg:grid-cols-5 gap-5">
         
             {/* ROOM Facility */}
-            <div className="flex flex-col items-center max-w-xs text-center">
+            <div className="flex flex-col border border-[#af9556] p-5 rounded-xl items-center max-w-xs ">
                 <FaHotel className="w-20 h-20 mb-5 text-[#af9556]" />
                 <p className="font-semibold text-2xl">ROOM</p>
                 <p className="mt-4 ">
@@ -22,7 +22,7 @@ const OurFacilities = () => {
             </div>
 
             {/* RESTAURANT Facility */}
-            <div className="flex flex-col items-center max-w-xs text-center">
+            <div className="flex flex-col border border-[#af9556] p-5 rounded-xl items-center max-w-xs ">
                 <IoIosRestaurant className="w-20 h-20 mb-5 text-[#af9556]" />
                 <p className="font-semibold text-2xl">RESTAURANT</p>
                 <p className="mt-4 ">
@@ -31,7 +31,7 @@ const OurFacilities = () => {
             </div>
 
             {/* SPA Facility */}
-            <div className="flex flex-col items-center max-w-xs text-center">
+            <div className="flex flex-col border border-[#af9556] p-5 rounded-xl items-center max-w-xs ">
                 <BiBowlHot className="w-20 h-20 mb-5 text-[#af9556]" />
                 <p className="font-semibold text-2xl">SPA</p>
                 <p className="mt-4 ">
@@ -40,7 +40,7 @@ const OurFacilities = () => {
             </div>
 
             {/* FREE WIFI Facility */}
-            <div className="flex flex-col items-center max-w-xs text-center">
+            <div className="flex flex-col border border-[#af9556] p-5 rounded-xl items-center max-w-xs ">
                 <FaWifi className="w-20 h-20 mb-5 text-[#af9556]" />
                 <p className="font-semibold text-2xl">FREE WIFI</p>
                 <p className="mt-4 ">
@@ -49,7 +49,7 @@ const OurFacilities = () => {
             </div>
 
             {/* WEDDINGS Facility */}
-            <div className="flex flex-col items-center max-w-xs text-center">
+            <div className="flex flex-col border border-[#af9556] p-5 rounded-xl items-center max-w-xs ">
                 <GiBalloons className="w-20 h-20 mb-5 text-[#af9556]" />
                 <p className="font-semibold text-2xl">WEDDINGS</p>
                 <p className="mt-4 ">

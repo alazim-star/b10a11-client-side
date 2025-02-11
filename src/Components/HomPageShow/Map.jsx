@@ -1,20 +1,22 @@
 import React from 'react';
 import { Map, Marker } from "pigeon-maps";
+import SectionTitle from '../sheard/SectionTitle';
 
 const LocationMap = () => {
   const hotelLocation = [23.7554816, 90.2713091]; 
 
   return (
-    <div className="p-4 container mx-auto">
-      <address className="text-center text-lg font-semibold mb-4">
-        <p className="text-3xl font-bold mb-5">Location</p>
-        11-12 North-South Road, Old Dhaka, Bangladesh
-      </address>
-      <div className="w-full h-[450px]">
+    <div className="mt-10 container mx-auto">
+
+<SectionTitle subheading='Location'></SectionTitle>
+<address className="text-center mb-4"><p>11-12 North-South Road, Old Dhaka, Bangladesh</p></address>
+
+      <div className="border p-5 rounded-xl border-[#af9556]">
         <Map 
           height={450} 
           defaultCenter={hotelLocation} 
           defaultZoom={14}
+        
         >
           <Marker width={50} anchor={hotelLocation} />
         </Map>

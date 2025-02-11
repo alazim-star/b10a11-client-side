@@ -164,7 +164,7 @@ const ViewDetails = () => {
               </Link>
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="bg-[#af9556] text-white py-2 px-6 rounded-lg shadow hover:bg-white hover:text-[#af9556]"
+                className="bg-primary text-white py-2 px-6 rounded-lg shadow hover:bg-white hover:text-[#af9556]"
               >
                 Book Now
               </button>

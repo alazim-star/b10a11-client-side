@@ -17,7 +17,7 @@ const FeaturedRoomsCard = ({ room }) => {
   };
 
   return (
-    <div className="relative overflow-hidden shadow-lg group cursor-pointer">
+    <div className="relative overflow-hidden shadow-lg group cursor-pointer rounded-xl">
       {/* Room Image */}
       <img
         className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
@@ -36,7 +36,7 @@ const FeaturedRoomsCard = ({ room }) => {
         {/* Book Now Button */}
       <button
           onClick={handleSeeDetails}
-          className="px-4 py-2 bg-[#af9556] text-white rounded-full hover:bg-white hover:text-[#af9556] transition duration-300"
+          className="px-4 py-2 bg-primary text-white rounded-full hover:bg-white hover:text-[#af9556] transition duration-300"
         >
          Book Now
         </button>
