@@ -9,12 +9,12 @@ const Memory = () => {
             rowSpan: "row-span-1",
         },
         {
-            src: "https://i.ibb.co.com/RGFfDSh/images-2.jpg",
+            src: "https://i.ibb.co.com/SwVRH4sx/DSC-1068-Copy-Copy-Copy-scaled.jpg",
             colSpan: "col-span-2",
             rowSpan: "row-span-1",
         },
         {
-            src: "https://i.ibb.co.com/dmQ7G60/istockphoto-2159024494-612x612.jpg",
+            src: "https://i.ibb.co.com/3y2312pr/What-Do-You-Wear-to-a-Hotel-Pool.jpg",
             colSpan: "col-span-",
             rowSpan: "row-span-1",
         },
@@ -24,7 +24,7 @@ const Memory = () => {
             rowSpan: "row-span-2",
         },
         {
-            src: "https://i.ibb.co.com/WtGZ1gx/lovepik-rest-for-business-men-in-hotel-rooms-picture-501117371.jpg",
+            src: "https://i.ibb.co.com/rRvqLW1k/istockphoto-957245818-612x612.jpg",
             colSpan: "col-span-2",
             rowSpan: "row-span-2",
         },

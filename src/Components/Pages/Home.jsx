@@ -7,6 +7,8 @@ import Memory from '../HomPageShow/Memory';
 import Map from '../HomPageShow/Map';
 import ReviewShort from '../HomPageShow/ReviewShort';
 import HomePage from '../HomPageShow/HomePage';
+import Video from '../HomPageShow/Video';
+
 
 
 
@@ -16,10 +18,14 @@ const Home = () => {
         <div>
        <Banner></Banner>
        <OurFacilities></OurFacilities>
-       <Map></Map>
+   
        <Outlet></Outlet>
        <Memory></Memory>
        <ReviewShort></ReviewShort>
+      <div className='flex gap-5 container mx-auto'>
+      <Map></Map>
+   <Video></Video>
+      </div>
        <HomePage></HomePage>
 
         </div>

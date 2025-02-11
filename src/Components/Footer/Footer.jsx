@@ -1,6 +1,7 @@
 import React from 'react';
-import logo from '../../assets/1.png'
-import { FaFacebook, FaInstagramSquare, FaTwitter, FaYoutube } from 'react-icons/fa';
+import logo from '../../assets/1.png';
+import { FaFacebook, FaInstagramSquare, FaPhone, FaTwitter, FaYoutube } from 'react-icons/fa';
+import { BsFillTelephoneForwardFill } from "react-icons/bs";
 
 const Footer = () => {
   
@@ -14,17 +15,18 @@ const Footer = () => {
                 <img className='w-32 h-32' src={logo} alt="" />
               <h2 className="text-2xl font-bold mb-4">THE GRAND PALACE</h2>
               <p className="text-gray-400 mb-4">
-                Rapidiously myocardinate crossing the hotella model. Appropriately create interesting area holistically facilitate place done.
+              Our hotel is uniquely designed, where each space leads you towards a distinctive experience.
               </p>
               <div className="flex items-center space-x-4 mb-4">
-                <i className="fas fa-phone text-yellow-400"></i>
-                <span>+980 (1234) 567 220</span>
+              
+              <a className='text-primary text-2xl'  href=""><BsFillTelephoneForwardFill /></a>
+                <span>+1900 849 867</span>
               </div>
               <div className="flex space-x-4 ">
-           <a className='text-[#af9556] text-2xl'  href=""><FaFacebook /></a>
-           <a className='text-[#af9556] text-2xl'  href=""><FaInstagramSquare /></a>
-           <a className='text-[#af9556] text-2xl'  href=""><FaTwitter /></a>
-           <a className='text-[#af9556] text-2xl'  href=""><FaYoutube /></a>
+           <a className='text-primary text-2xl' ><FaFacebook /></a>
+           <a className='text-primary text-2xl'  ><FaInstagramSquare /></a>
+           <a className='text-primary text-2xl'  ><FaTwitter /></a>
+           <a className='text-primary text-2xl'  ><FaYoutube /></a>
        
               </div>
             </div>

@@ -6,7 +6,7 @@ const LocationMap = () => {
   const hotelLocation = [23.7554816, 90.2713091]; 
 
   return (
-    <div className="mt-10 container mx-auto">
+    <div className="mt-10 container mx-auto w-1/2">
 
 <SectionTitle subheading='Location'></SectionTitle>
 <address className="text-center mb-4"><p>11-12 North-South Road, Old Dhaka, Bangladesh</p></address>
