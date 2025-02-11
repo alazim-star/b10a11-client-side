@@ -178,7 +178,7 @@ const MyBooking = () => {
       </div>
 
       {filteredBookings.length > 0 ? (
-        <table className="table-auto w-full bg-white shadow-lg rounded-md">
+        <table className="table-auto w-full  shadow-lg rounded-md">
           <thead>
             <tr className="text-left">
               <th className="p-4">Room Details</th>
@@ -239,7 +239,7 @@ const MyBooking = () => {
 
       {/* Modal to update booking */}
       {isModalOpen && selectedBooking && (
-        <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center">
+        <div className="fixed inset-0  bg-opacity-50 flex justify-center items-center">
           <div className="bg-white p-6 rounded-lg shadow-lg w-96">
             <h3 className="text-2xl font-semibold mb-4">Update Booking</h3>
             <form className="space-y-4">
@@ -274,7 +274,7 @@ const MyBooking = () => {
 
       {/* Review Modal */}
       {reviewModalOpen && selectedBooking && user && (
-        <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center">
+        <div className="fixed inset-0  bg-opacity-50 flex justify-center items-center">
           <div className="bg-white p-6 rounded-lg shadow-lg w-96">
             <h3 className="text-2xl font-semibold mb-4">Give a Review</h3>
             <form onSubmit={handleReviewSubmit} className="space-y-4">
@@ -284,7 +284,7 @@ const MyBooking = () => {
                   type="email"
                   value={user?.email}
                   disabled
-                  className="input input-bordered w-full bg-gray-200"
+                  className="input input-bordered w-full "
                 />
               </div>
               <div>

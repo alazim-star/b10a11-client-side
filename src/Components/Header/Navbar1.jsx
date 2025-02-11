@@ -2,12 +2,12 @@ import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/1.png";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
-
+import { useTranslation } from "react-i18next";
 const Navbar1 = () => {
   const { user, signOutUser, loading } = useContext(AuthContext);
   const [scrolled, setScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const { t } = useTranslation();
   // Handle sign-out
   const handleSignOut = () => {
     signOutUser()
@@ -34,19 +34,19 @@ const Navbar1 = () => {
   const links = (
     <>
       <NavLink to="/" className="hover:text-[#af9556] transition mx-4">
-        Home
+      {t("home")}
       </NavLink>
       <NavLink to="/allRooms" className="hover:text-[#af9556] transition mx-4">
-        All Rooms
+      {t("all_rooms")}
       </NavLink>
       <NavLink to="/myBooking" className="hover:text-[#af9556] transition mx-4">
-        My Booking
+   {t("my_booking")}
       </NavLink>
       <NavLink to="/about" className="hover:text-[#af9556] transition mx-4">
-        About
+   {t("about")}
       </NavLink>
       <NavLink to="/contactUs" className="hover:text-[#af9556] transition mx-4">
-        Contact Us
+      {t("contact_us")}
       </NavLink>
     </>
   );
@@ -105,7 +105,7 @@ const Navbar1 = () => {
                 />
               )}
               <p className="text-sm lg:text-md text-white">
-                Welcome, <span className="font-bold">{user.email}</span>
+              {t("welcome")}, <span className="font-bold">{user.email}</span>
               </p>
               <button
                 onClick={handleSignOut}

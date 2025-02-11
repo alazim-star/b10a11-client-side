@@ -2,10 +2,10 @@ import React from 'react';
 
 const About = () => {
   return (
-    <div className="bg-gray-100 min-h-screen py-12 px-6">
+    <div className=" min-h-screen py-12 px-6">
       <div className="max-w-5xl mx-auto text-center">
-        <h1 className="text-4xl font-extrabold text-gray-800 mb-6">Welcome to The Grand Palace Hotel</h1>
-        <p className="text-lg text-gray-600 mb-8">
+        <h1 className="text-4xl font-extrabold mb-6">Welcome to The Grand Palace Hotel</h1>
+        <p className="text-lg  mb-8">
           Experience luxury, comfort, and the finest hospitality at The Grand Palace Hotel. Whether you're here for business, leisure, or a special event, we provide an unforgettable stay.
         </p>
         
