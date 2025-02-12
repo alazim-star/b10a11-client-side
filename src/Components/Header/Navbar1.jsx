@@ -33,22 +33,31 @@ const Navbar1 = () => {
 
   const links = (
     <>
-      <NavLink to="/" className="hover:text-[#af9556] transition mx-4">
+    <NavLink to="/" className="hover:text-[#af9556] transition mx-4">
       {t("home")}
-      </NavLink>
-      <NavLink to="/allRooms" className="hover:text-[#af9556] transition mx-4">
+    </NavLink>
+    <NavLink to="/allRooms" className="hover:text-[#af9556] transition mx-4">
       {t("all_rooms")}
-      </NavLink>
-      <NavLink to="/myBooking" className="hover:text-[#af9556] transition mx-4">
-   {t("my_booking")}
-      </NavLink>
-      <NavLink to="/about" className="hover:text-[#af9556] transition mx-4">
-   {t("about")}
-      </NavLink>
-      <NavLink to="/contactUs" className="hover:text-[#af9556] transition mx-4">
+    </NavLink>
+     {/* 🔹 User Logged In হলে এই রুটগুলো দেখাবে */}
+     {user && (
+      <>
+        <NavLink to="/myBooking" className="hover:text-[#af9556] transition mx-4">
+          {t("my_booking")}
+        </NavLink>
+      
+      </>
+    )}
+    <NavLink to="/about" className="hover:text-[#af9556] transition mx-4">
+      {t("about")}
+    </NavLink>
+    <NavLink to="/contactUs" className="hover:text-[#af9556] transition mx-4">
       {t("contact_us")}
-      </NavLink>
-    </>
+    </NavLink>
+  
+   
+  </>
+  
   );
 
   return (
@@ -82,9 +91,9 @@ const Navbar1 = () => {
         </button>
 
         {/* Logo and Title */}
-        <div className=" flex items-center mr-24">
+        <div className=" flex items-center   lg:mr-24  ">
           <h2 className="text-3xl font-bold">THE</h2>
-          <img className="w-24 h-24 mx-2" src={logo} alt="Logo" />
+          <img className="lg:w-24 h-24 mx-2" src={logo} alt="Logo" />
           <h2 className="text-3xl font-bold">PALACE</h2>
         </div>
 
@@ -105,17 +114,17 @@ const Navbar1 = () => {
                 />
               )}
               <p className="text-sm lg:text-md text-white">
-              {t("welcome")}, <span className="font-bold">{user.email}</span>
+               <span className="font-bold">{user.email}</span>
               </p>
               <button
                 onClick={handleSignOut}
-                className="btn bg-blue-500 rounded-md text-white"
+                className=" hover:text-black hover:bg-white bg-primary rounded-full text-white  px-8 py-3"
               >
                 Sign Out
               </button>
             </div>
           ) : (
-            <Link to="/login" className="btn bg-blue-500 rounded-md text-white">
+            <Link to="/login" className=" hover:text-black hover:bg-white bg-primary rounded-full text-white px-8 py-3 ">
               Login
             </Link>
           )}

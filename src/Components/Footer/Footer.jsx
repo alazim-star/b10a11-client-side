@@ -2,6 +2,7 @@ import React from 'react';
 import logo from '../../assets/1.png';
 import { FaFacebook, FaInstagramSquare, FaPhone, FaTwitter, FaYoutube } from 'react-icons/fa';
 import { BsFillTelephoneForwardFill } from "react-icons/bs";
+import { NavLink } from 'react-router-dom';
 
 const Footer = () => {
   
@@ -32,20 +33,22 @@ const Footer = () => {
             </div>
     
             {/* Useful Links */}
-            <div className='mt-32'>
+            <div className='lg:mt-32'>
               <h4 className="text-lg font-semibold mb-4">USEFUL LINKS</h4>
               <ul className="space-y-2 text-gray-400">
-                <li>About Hotel</li>
-                <li>Rooms & Sui</li>
-                <li>Reservation</li>
-                <li>Contact</li>
+                <li><NavLink to="/">Home</NavLink></li>
+                <li><NavLink to="/allRooms">All Rooms</NavLink></li>
+                <li><NavLink to="/myBooking">My Booking</NavLink></li>
+                <li><NavLink to="/about">About</NavLink></li>
+                <li><NavLink to="/contactUs">Contact</NavLink></li>
+            
               </ul>
             </div>
     
             {/* Gallery */}
-            <div className='mt-32'>
+            <div className='lg:mt-32'>
               <h4 className="text-lg font-semibold mb-4">GALLERY</h4>
-              <div className="grid grid-cols-3 gap-2">
+              <div className="grid lg:grid-cols-3 gap-2">
                 <img src="https://i.ibb.co.com/GC1s1Tx/istockphoto-1732983887-612x612.jpg" alt="Gallery 1" className="w-full  rounded-md" />
                 <img src="https://i.ibb.co.com/QNpQkwP/istockphoto-1418784247-612x612.jpg" alt="Gallery 2" className="w-full h-full rounded-md" />
                 <img src="https://i.ibb.co.com/y4KRBnV/istockphoto-1815808691-612x612.jpg" alt="Gallery 3" className="w-full h-full rounded-md" />
@@ -56,7 +59,7 @@ const Footer = () => {
             </div>
     
             {/* Newsletter */}
-            <div className='mt-32'>
+            <div className='lg:mt-32'>
               <h4 className="text-lg font-semibold mb-4">NEWSLETTER</h4>
               <p className="text-gray-400 mb-4">Subscribe to our Newsletter</p>
               <div>
@@ -79,7 +82,7 @@ const Footer = () => {
           </div>
     
           {/* Bottom Section */}
-          <div className=" mb-20 border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
+          <div className=" border-t border-gray-700 mt-2 pt-6 text-center text-gray-400">
             <p>© 2024,<span className='text-[#af9556]'> THE GRAND PALACE</span> All Rights Reserved.</p>
             <div className="flex justify-center space-x-6 mt-4">
              <p> Privacy Police</p>

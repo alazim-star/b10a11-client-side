@@ -3,7 +3,7 @@ import roomVideo from "../../assets/Green Yellow and White Travel Vlog YouTube T
 import SectionTitle from "../sheard/SectionTitle";
 const Video = () => {
   return (
-<div className="w-1/2 mt-10  ">
+<div className="lg:w-1/2 mt-10  ">
     
    <SectionTitle subheading="Explore Our Luxurious Rooms"></SectionTitle>
    <p className="text-center mb-4">Experience comfort and elegance</p>

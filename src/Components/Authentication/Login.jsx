@@ -127,17 +127,17 @@ const handleGoogleSignIn=()=>{
 <div className="relative inset-0">
   <img
     className=" object-cover lg:w-full  opacity-80 h-screen "
-    src="https://i.ibb.co.com/rH7mrRg/15-g-signature-premium-family-room-standard.jpg"
+    src="https://i.ibb.co.com/zVF76Swq/1671696275f7bd83f4436c7ce689a74f63eeb983d4.png"
     alt="Background"
   />
-  <div className="absolute inset-0 bg-black bg-opacity-30"></div>
+  <div className="absolute inset-0 bg-black bg-opacity-30 "></div>
 </div>
 
-          <div className="flex items-center  justify-center ">
+          <div className="flex items-center  justify-center  ">
      
             <ToastContainer />
             <div className= " w-30 sm:h-96 lg:h-[600px]  bg-white/30 rounded-lg  shadow-lg  backdrop-blur-md  card bg-base-100 lg:w-full lg:max-w-lg  p-10 absolute bottom-0">
-                <h2 className="text-2xl text-center font-bold mb-5">
+                <h2 className="text-2xl text-center font-bold ">
                     Login to Your Account
                 </h2>
                 <form onSubmit={handleLogin} className="card-body">
@@ -181,7 +181,7 @@ const handleGoogleSignIn=()=>{
                     {/* Submit Button */}
                 
                   <div className="form-control mt-6">
-                    <button className="btn  rounded-md bg-green-600 text-white">
+                    <button className=" hover:text-black hover:bg-white bg-primary rounded-full text-white px-8 py-3 ">
                             Login
                         </button>
                     </div>
@@ -196,7 +196,7 @@ const handleGoogleSignIn=()=>{
                 </p>
                 <button
       onClick={handleGoogleSignIn}
-      className="flex items-center justify-center p-2   shadow-sm bg-white btn w-[300px]  ml-14 mt-5"
+      className="flex items-center justify-center p-2   shadow-sm bg-white btn w-[300px]  lg:ml-14 mt-5"
     >
       <img className='w-6 h-6 mr-2 ' src="https://i.ibb.co.com/k9sCr1Z/Logo-google-icon-PNG.png" alt="" /> {/* Google Logo */}
       <span className="text-gray-600 font-medium">Log in with Google</span>
