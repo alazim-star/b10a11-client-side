@@ -2,7 +2,7 @@ const Load = () => {
     return (
         <div className="flex min-h-screen justify-center items-center">
             {/* DaisyUI Spinner */}
-            <p className="ml-4 text-xl text-[#af9556]">Loading...</p>
+            <div className="text-[#af9556]  mb-96 loading loading-dots loading-lg"></div>
         </div>
     );
 };
