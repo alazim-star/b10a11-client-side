@@ -47,7 +47,6 @@ const MyBooking = () => {
 
   }, [user]);
 
-  // Handle canceling a booking
   const handleCancel = (id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -59,16 +58,18 @@ const MyBooking = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://b10a11-server-side-gray.vercel.app/bookings/${id}`, { method: "DELETE" })
-          .then((res) => res.json())
-          .then((data) => {
-            if (data.deletedCount > 0) {
+        axios
+          .delete(`https://b10a11-server-side-gray.vercel.app/bookings/${id}`, { withCredentials: true })
+          .then((res) => {
+            if (res.data.deletedCount > 0) {
               Swal.fire("Deleted!", "Your booking has been removed.", "success");
-              fetch(`https://b10a11-server-side-gray.vercel.app/bookings/${user.email}`)
-                .then((res) => res.json())
-                .then((data) => {
-                  setBookings(data);
-                  setFilteredBookings(data);
+  
+              // Fetch updated bookings after deletion
+              axios
+                .get(`https://b10a11-server-side-gray.vercel.app/bookings/${user.email}`, { withCredentials: true })
+                .then((res) => {
+                  setBookings(res.data);
+                  setFilteredBookings(res.data);
                 })
                 .catch((err) => console.error("Error fetching updated bookings:", err));
             }
@@ -77,6 +78,7 @@ const MyBooking = () => {
       }
     });
   };
+  
 
   // Handle updating a booking's date
   const handleUpdateBooking = () => {
@@ -159,7 +161,7 @@ const MyBooking = () => {
   return (
     <div className="container mx-auto p-6">
       <div className="flex justify-between items-center mb-6">
-        <h2 className="lg:text-2xl font-semibold">My Room Bookings</h2>
+        <h2 className="lg:text-2xl font-semibold">My Reservation</h2>
         <div className="flex gap-2">
           <input
             type="text"
@@ -178,63 +180,64 @@ const MyBooking = () => {
       </div>
 
       {filteredBookings.length > 0 ? (
-        <table className="table-auto w-full  shadow-lg rounded-md">
-          <thead>
-            <tr className="text-left">
-              <th className="p-4">Room Details</th>
-              <th className="p-4">Price Per Night</th>
-              <th className="p-4">Booking Date</th>
-              <th className="p-4">Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {filteredBookings.map((room) => (
-              <tr key={room._id} className="border-b">
-                <td className="p-4 flex items-center gap-4">
-                  <img
-                    src={room.photoUrl}
-                    alt="Room"
-                    className="w-16 h-16 object-cover rounded-md"
-                  />
-                  <div>
-                    <p className="font-medium">{room.roomName}</p>
-                  </div>
-                </td>
-                <td className="p-4">${room.pricePerNight}</td>
-                <td className="p-4">{room.bookingDate}</td>
-                <td className="p-4">
-  <div className="relative">
-    <select
-      onChange={(e) => {
-        const selectedAction = e.target.value;
-        if (selectedAction === "cancel") {
-          handleCancel(room._id);
-        } else if (selectedAction === "updateDate") {
-          setSelectedBooking(room);
-          setSelectedDate(new Date(room.bookingDate));
-          setIsModalOpen(true);
-        } else if (selectedAction === "review") {
-          setSelectedBooking(room);
-          setReviewModalOpen(true);
-        }
-      }}
-      className="bg-white text-gray-700 py-2 px-4 rounded border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-    >
-      <option value="">Select Action</option>
-      <option value="cancel">Cancel</option>
-      <option value="updateDate">Update Date</option>
-      <option value="review">Review</option>
-    </select>
+  <div className="overflow-x-auto">
+    <table className="table-auto w-full shadow-lg rounded-md">
+      <thead>
+        <tr className="text-left bg-white text-black">
+          <th className="p-2 md:p-4 text-sm md:text-base">Room Details</th>
+          <th className="p-2 md:p-4 text-sm md:text-base">Price Per Night</th>
+          <th className="p-2 md:p-4 text-sm md:text-base">Booking Date</th>
+          <th className="p-2 md:p-4 text-sm md:text-base">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {filteredBookings.map((room) => (
+          <tr key={room._id} className="border-b">
+            <td className="p-2 md:p-4 flex items-center gap-4">
+              <img
+                src={room.photoUrl}
+                alt="Room"
+                className="w-12 h-12 md:w-16 md:h-16 object-cover rounded-md"
+              />
+              <div>
+                <p className="font-medium text-sm md:text-base">{room.roomName}</p>
+              </div>
+            </td>
+            <td className="p-2 md:p-4 text-sm md:text-base">${room.pricePerNight}</td>
+            <td className="p-2 md:p-4 text-sm md:text-base">{room.bookingDate}</td>
+            <td className="p-2 md:p-4">
+              <div className="relative">
+                <select
+                  onChange={(e) => {
+                    const selectedAction = e.target.value;
+                    if (selectedAction === "cancel") {
+                      handleCancel(room._id);
+                    } else if (selectedAction === "updateDate") {
+                      setSelectedBooking(room);
+                      setSelectedDate(new Date(room.bookingDate));
+                      setIsModalOpen(true);
+                    } else if (selectedAction === "review") {
+                      setSelectedBooking(room);
+                      setReviewModalOpen(true);
+                    }
+                  }}
+                  className="bg-primary text-white py-1 md:py-2 px-2 md:px-4 rounded border border-primary shadow-sm text-xs md:text-sm focus:outline-primary focus:ring-primary"
+                >
+                  <option value="">Select Action</option>
+                  <option value="cancel">Cancel</option>
+                  <option value="updateDate">Update Date</option>
+                  <option value="review">Review</option>
+                </select>
+              </div>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
   </div>
-</td>
-
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      ) : (
-        <p className="text-gray-600">No bookings found for your search.</p>
-      )}
+) : (
+  <p className="text-gray-600 text-center text-sm md:text-base">No bookings found for your search.</p>
+)}
 
       {/* Modal to update booking */}
       {isModalOpen && selectedBooking && (

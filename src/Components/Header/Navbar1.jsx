@@ -39,7 +39,7 @@ const Navbar1 = () => {
     <NavLink to="/allRooms" className="hover:text-[#af9556] transition mx-4">
       {t("all_rooms")}
     </NavLink>
-     {/* 🔹 User Logged In হলে এই রুটগুলো দেখাবে */}
+   
      {user && (
       <>
         <NavLink to="/myBooking" className="hover:text-[#af9556] transition mx-4">

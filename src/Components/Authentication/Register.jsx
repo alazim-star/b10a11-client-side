@@ -78,91 +78,93 @@ const Register = () => {
   
 
   return (
-    <div className="items-center min-h-screen flex justify-center ">
-      <ToastContainer />
-      <div className="card bg-base-100  max-w-lg p-10">
-        <h2 className="text-2xl text-center font-bold">Register Your Account</h2>
-        <form onSubmit={handleRegister} className="card-body">
-          {/*input Name Section */}
-          <div className="form-control">
-            <div className="flex space-x-4">
-              <div>
-                <label className="label">
-                  <span className="label-text">First Name</span>
-                </label>
-                <input name="firstName" type="text" placeholder="First Name" className="input input-bordered" required />
-              </div>
-              <div>
-                <label className="label">
-                  <span className="label-text">Last Name</span>
-                </label>
-                <input name="lastName" type="text" placeholder="Last Name" className="input input-bordered" required />
-              </div>
-            </div>
-         
-            <label className="label">
-              <span className="label-text">Your Name</span>
-            </label>
-            <input name="name" type="text" placeholder="Enter your name" className="input input-bordered w-[450px]" required />
-          </div>
+<div className="relative  min-h-screen flex items-center justify-center bg-gray-900 px-4">
+  {/* Background Image */}
+  <img 
+    className="absolute inset-0 w-full h-full object-cover opacity-50" 
+    src="https://i.ibb.co/PvQ0dFw8/3d4adec0dd46a256d464e14e49a56641.jpg" 
+    alt="Background" 
+  />
 
-          {/*input Photo URL */}
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">Photo URL</span>
-            </label>
-            <input name="photo" type="text" placeholder="Photo URL (Optional)" className="input  w-[450px] input-bordered" />
-          </div>
+  {/* Registration Card */}
+  <div className="relative z-10 w-full max-w-md bg-white/30 backdrop-blur-lg shadow-lg rounded-lg p-6 sm:p-10">
+    <h2 className="text-2xl font-bold text-center text-white">Register Your Account</h2>
 
-          {/*input Email */}
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">Email</span>
-            </label>
-            <input name="email" type="email" placeholder="Enter your email" className=" w-[450px] input input-bordered" required />
-          </div>
-
-          {/*input Password */}
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">Password</span>
-            </label>
-            <div className="relative">
-              <input
-                name="password"
-                type={showPassword ? "text" : "password"}
-                placeholder="Enter your password"
-                className=" w-[450px] input input-bordered "
-                required
-              />
-          
-              <span
-                className="absolute top-1/2 transform -translate-y-1/2 -right-16 cursor-pointer text-gray-500"
-                onClick={() => setShowPassword(!showPassword)}
-              >
-                {showPassword ? <FaEyeSlash /> : <FaEye />}
-              </span>
-            </div>
-            {passwordError && <p className="text-red-500 text-sm mt-2">{passwordError}</p>}
-          </div>
-
-          {/* Submit */}
-          <div className="form-control mt-6">
-            <button className="btn bg-green-600 text-white w-[450px] rounded-lg">Register</button>
-          </div>
-        </form>
-        <p className="text-center font-semibold mt-4 ml-10">
-          Already Have An Account? <Link to="/login" className="text-red-500 underline">Login</Link>
-        </p>
-        <button
-          onClick={handleGoogleSignIn}
-          className="flex items-center justify-center p-2 shadow-sm bg-white btn w-full mt-5 ml-10"
-        >
-          <img className='w-6 h-6 mr-2 ' src="https://i.ibb.co.com/k9sCr1Z/Logo-google-icon-PNG.png" alt="" />
-          <span className="text-gray-600 font-medium">Log in with Google</span>
-        </button>
+    <form onSubmit={handleRegister} className="space-y-4 mt-4">
+      {/* Name Fields */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div>
+          <label className="label-text text-white">First Name</label>
+          <input name="firstName" type="text" placeholder="First Name" className="input input-bordered w-full" required />
+        </div>
+        <div>
+          <label className="label-text text-white">Last Name</label>
+          <input name="lastName" type="text" placeholder="Last Name" className="input input-bordered w-full" required />
+        </div>
       </div>
-    </div>
+
+      {/* Your Name */}
+      <div>
+        <label className="label-text text-white">Your Name</label>
+        <input name="name" type="text" placeholder="Enter your name" className="input input-bordered w-full" required />
+      </div>
+
+      {/* Photo URL */}
+      <div>
+        <label className="label-text text-white">Photo URL</label>
+        <input name="photo" type="text" placeholder="Photo URL (Optional)" className="input input-bordered w-full" />
+      </div>
+
+      {/* Email */}
+      <div>
+        <label className="label-text text-white">Email</label>
+        <input name="email" type="email" placeholder="Enter your email" className="input input-bordered w-full" required />
+      </div>
+
+      {/* Password */}
+      <div>
+        <label className="label-text text-white">Password</label>
+        <div className="relative">
+          <input
+            name="password"
+            type={showPassword ? "text" : "password"}
+            placeholder="Enter your password"
+            className="input input-bordered w-full"
+            required
+          />
+          <span
+            className="absolute top-1/2 transform -translate-y-1/2 right-4 cursor-pointer text-gray-300"
+            onClick={() => setShowPassword(!showPassword)}
+          >
+            {showPassword ? <FaEyeSlash /> : <FaEye />}
+          </span>
+        </div>
+        {passwordError && <p className="text-red-500 text-sm mt-2">{passwordError}</p>}
+      </div>
+
+      {/* Submit Button */}
+      <div className="mt-4">
+        <button className="px-4 py-2 bg-primary text-white rounded-full hover:bg-white shadow-xl hover:text-[#af9556] transition duration-300 w-full">Register</button>
+      </div>
+    </form>
+
+    {/* Login Link */}
+    <p className="text-center font-semibold mt-4 text-white">
+      Already Have An Account? <Link to="/login" className="text-red-600 underline">Login</Link>
+    </p>
+
+    {/* Google Sign-In */}
+    <button
+      onClick={handleGoogleSignIn}
+      className="flex items-center justify-center p-2 shadow-sm bg-white btn w-full mt-4"
+    >
+      <img className='w-6 h-6 mr-2' src="https://i.ibb.co/k9sCr1Z/Logo-google-icon-PNG.png" alt="Google" />
+      <span className="text-gray-600 font-medium">Log in with Google</span>
+    </button>
+  </div>
+  </div>
+
+
   );
 };
 

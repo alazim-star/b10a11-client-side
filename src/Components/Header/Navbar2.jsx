@@ -11,9 +11,9 @@ const Navbar2 = () => {
   };
 
   return (
-    <div className="bg-[#af9556]">
+    <div className="bg-[#af9556] text-white">
       {/* Contact and Address */}
-      <div className="flex flex-row lg:gap-4 items-center mx-auto container lg:ml-96 ">
+      <div className=" flex flex-row lg:gap-4 items-center mx-auto container lg:ml-96 ">
         <p className="text-sm">
           {t("call_now")}: <span className="font-bold">+1900 849 867</span>
         </p>
