@@ -31,7 +31,7 @@ const ReviewShort = () => {
   }, []);
 
   return (
-    <div className="container mx-auto p-4 flex justify-center">
+    <div className="container mx-auto p-4 flex justify-center lg:ml-[600px]">
       <div className="w-full ">
         <h2 className="ml-20 text-3xl  my-6">USER <span className='text-[#af9556]'>REVIEWS</span></h2>
         {reviews.length > 0 ? (
