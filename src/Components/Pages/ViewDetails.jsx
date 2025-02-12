@@ -158,13 +158,13 @@ const ViewDetails = () => {
             </div>
             <div className="flex justify-between space-x-4 mt-6">
               <Link to="/allRooms">
-                <button className="bg-blue-600 text-white py-2 px-6 rounded-lg shadow hover:bg-blue-700">
+                <button  className="px-4 py-2 bg-primary text-white rounded-full hover:bg-white shadow-xl hover:text-[#af9556] transition duration-300">
                   See All Rooms
                 </button>
               </Link>
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="bg-primary text-white py-2 px-6 rounded-lg shadow hover:bg-white hover:text-[#af9556]"
+                className="px-4 py-2 bg-primary text-white rounded-full hover:bg-white shadow-xl hover:text-[#af9556] transition duration-300"
               >
                 Book Now
               </button>
@@ -198,7 +198,8 @@ const ViewDetails = () => {
           <div className="flex justify-end mt-4">
             <button
               onClick={() => setReviewModalOpen(true)}
-              className="bg-blue-600 text-white py-2 px-6 rounded-lg shadow hover:bg-blue-700"
+              className="px-4 py-2 border-2 border-primary text-primary rounded-full hover:bg-primary hover:text-white shadow-xl transition duration-300"
+
             >
               Give Review
             </button>
@@ -243,13 +244,13 @@ const ViewDetails = () => {
                 <button
                   type="button"
                   onClick={() => setIsModalOpen(false)}
-                  className="bg-gray-500 text-white py-2 px-6 rounded"
+                  className="px-4 py-2 border-2 border-primary text-primary rounded-full hover:bg-primary hover:text-white shadow-xl transition duration-300"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="bg-green-600 text-white py-2 px-6 rounded"
+                className="px-4 py-2 bg-primary text-white rounded-full hover:bg-white shadow-xl hover:text-[#af9556] transition duration-300"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? 'Submitting...' : 'Confirm Booking'}
@@ -289,13 +290,13 @@ const ViewDetails = () => {
                 <button
                   type="button"
                   onClick={() => setReviewModalOpen(false)}
-                  className="bg-gray-500 text-white py-2 px-6 rounded"
+                 className="px-4 py-2 border-2 border-primary text-primary rounded-full hover:bg-primary hover:text-white shadow-xl transition duration-300"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="bg-blue-600 text-white py-2 px-6 rounded"
+                   className="px-4 py-2 bg-primary text-white rounded-full hover:bg-white shadow-xl hover:text-[#af9556] transition duration-300"
                 >
                   Submit Review
                 </button>

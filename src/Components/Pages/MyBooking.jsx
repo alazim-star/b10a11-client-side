@@ -168,10 +168,10 @@ const MyBooking = () => {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
-          <button className="btn bg-green-600 text-white" onClick={handleSearch}>
+          <button className="px-4 py-2 bg-primary text-white rounded-full hover:bg-white shadow-xl hover:text-[#af9556] transition duration-300" onClick={handleSearch}>
             Search
           </button>
-          <button className="btn bg-green-600 text-white" onClick={handleReset}>
+          <button  className="px-4 py-2 border-2 border-primary text-primary rounded-full hover:bg-primary hover:text-white shadow-xl transition duration-300" onClick={handleReset}>
             Reset
           </button>
         </div>
@@ -203,32 +203,31 @@ const MyBooking = () => {
                 <td className="p-4">${room.pricePerNight}</td>
                 <td className="p-4">{room.bookingDate}</td>
                 <td className="p-4">
-                  <button
-                    onClick={() => handleCancel(room._id)}
-                    className="bg-red-500 text-white py-1 px-3 rounded hover:bg-red-600"
-                  >
-                    Cancel
-                  </button>
-                  <button
-                    onClick={() => {
-                      setSelectedBooking(room);
-                      setSelectedDate(new Date(room.bookingDate));
-                      setIsModalOpen(true);
-                    }}
-                    className="bg-blue-500 text-white py-1 px-3 ml-2 rounded hover:bg-blue-600"
-                  >
-                    Update Date
-                  </button>
-                  <button
-                    onClick={() => {
-                      setSelectedBooking(room);
-                      setReviewModalOpen(true);
-                    }}
-                    className="bg-green-500 text-white py-1 px-3 ml-2 rounded hover:bg-green-600"
-                  >
-                    Review
-                  </button>
-                </td>
+  <div className="relative">
+    <select
+      onChange={(e) => {
+        const selectedAction = e.target.value;
+        if (selectedAction === "cancel") {
+          handleCancel(room._id);
+        } else if (selectedAction === "updateDate") {
+          setSelectedBooking(room);
+          setSelectedDate(new Date(room.bookingDate));
+          setIsModalOpen(true);
+        } else if (selectedAction === "review") {
+          setSelectedBooking(room);
+          setReviewModalOpen(true);
+        }
+      }}
+      className="bg-white text-gray-700 py-2 px-4 rounded border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+    >
+      <option value="">Select Action</option>
+      <option value="cancel">Cancel</option>
+      <option value="updateDate">Update Date</option>
+      <option value="review">Review</option>
+    </select>
+  </div>
+</td>
+
               </tr>
             ))}
           </tbody>
@@ -255,14 +254,14 @@ const MyBooking = () => {
                 <button
                   type="button"
                   onClick={() => setIsModalOpen(false)}
-                  className="bg-gray-300 py-2 px-4 rounded hover:bg-gray-400"
+                   className="px-4 py-2 border-2 border-primary text-primary rounded-full hover:bg-primary hover:text-white shadow-xl transition duration-300"
                 >
                   Cancel
                 </button>
                 <button
                   type="button"
                   onClick={handleUpdateBooking}
-                  className="bg-blue-600 text-white py-2 px-6 rounded hover:bg-blue-700"
+                     className="px-4 py-2 bg-primary text-white rounded-full hover:bg-white shadow-xl hover:text-[#af9556] transition duration-300"
                 >
                   Update Confirm
                 </button>
@@ -313,13 +312,13 @@ const MyBooking = () => {
                 <button
                   type="button"
                   onClick={() => setReviewModalOpen(false)}
-                  className="bg-gray-300 py-2 px-4 rounded hover:bg-gray-400"
+                   className="px-4 py-2 border-2 border-primary text-primary rounded-full hover:bg-primary hover:text-white shadow-xl transition duration-300"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="bg-green-600 text-white py-2 px-6 rounded hover:bg-green-700"
+                   className="px-4 py-2 bg-primary text-white rounded-full hover:bg-white shadow-xl hover:text-[#af9556] transition duration-300"
                 >
                   Submit Review
                 </button>
