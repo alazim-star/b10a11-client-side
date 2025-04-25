@@ -142,7 +142,7 @@ const About = () => {
   </figure>
   <div className="card-body items-center text-center">
     <h2 className="card-title">Housekeeping Associate </h2>
-    <p className='text-left'>The Housekeeping Associate plays a vital role in maintaining the cleanliness, comfort, and overall aesthetic of the hotel’s guest rooms and public areas.</p>
+    <p className='text-left'>The Housekeeping Associate plays a vital role in maintaining the cleanliness, comfort, and overall aesthetic of the hotel’s guest rooms</p>
    
   </div>
 </div>
