@@ -8,6 +8,7 @@ import Map from '../HomPageShow/Map';
 import ReviewShort from '../HomPageShow/ReviewShort';
 import HomePage from '../HomPageShow/HomePage';
 import Video from '../HomPageShow/Video';
+import AskQuestion from '../HomPageShow/AskQuestion';
 
 
 
@@ -29,6 +30,7 @@ const Home = () => {
    <Video></Video>
       </div>
       <ReviewShort></ReviewShort>
+      <AskQuestion></AskQuestion>
        <HomePage></HomePage>
 
         </div>
