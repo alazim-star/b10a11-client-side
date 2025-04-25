@@ -65,8 +65,8 @@ const Navbar1 = () => {
     <nav
       className={`${
         scrolled
-          ? "backdrop-blur-sm bg-white/60 text-black"
-          : "bg-[#151515] text-white"
+          ? "backdrop-blur-sm bg-white/60 text-black "
+          : "bg-[#151515] border-2 border-[#af9556]  text-white "
       } w-full sticky top-0 z-50 transition-all duration-300`}
     >
       <div className="flex flex-wrap items-center justify-between px-6 container mx-auto">
