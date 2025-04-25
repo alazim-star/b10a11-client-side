@@ -68,7 +68,7 @@ const Banner = () => {
 
 {showModal && (
   <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-    <div className="bg-primary rounded-lg p-1 relative max-w-full w-[90%] sm:w-[500px]">
+    <div className="bg-primary rounded-lg p-1 relative max-w-full w-[70%] sm:w-[500px]">
 
       {/* Image Section */}
       <div className="relative group overflow-hidden rounded-xl shadow-xl border border-gray-700 bg-gradient-to-br from-[#1a1a1a] to-[#3d3d3d]">
@@ -103,7 +103,7 @@ const Banner = () => {
 
           {/* CTA Button */}
           <Link to="/allRooms">
-            <button className="bg-primary hover:bg-yellow-600 rounded-full text-white font-semibold mt-5 px-6 py-2 sm:px-8 sm:py-3 transition-all z-20">
+            <button className=" bg-primary hover:bg-yellow-600 rounded-full text-white font-semibold mt-5 px-6 py-2 sm:px-8 sm:py-3 transition-all z-20">
               Book Now 🎁
             </button>
           </Link>
@@ -142,10 +142,11 @@ const Banner = () => {
             />
           </p>
           <Link to="/allRooms" className="text-lg font-semibold text-white hover:text-gray-300">
-            <button className="bg-primary hover:bg-white hover:text-primary text-white font-semibold py-2 px-4 rounded absolute lg:top-[257px] ml-[202px] top-[550px]">
-              Book Now
-            </button>
-          </Link>
+  <button className="bg-primary hover:bg-white hover:text-primary text-white font-semibold py-2 px-4 rounded absolute lg:top-[257px] ml-[202px] top-[550px] hidden sm:block">
+    Book Now
+  </button>
+</Link>
+
         </div>
       </div>
 
