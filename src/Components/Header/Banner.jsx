@@ -67,66 +67,56 @@ const Banner = () => {
     <div className="w-full relative mx-auto">
 
 {showModal && (
-  <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-    <div className="bg-primary rounded-lg p-1 relative">
-
-
+  <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+    <div className="bg-primary rounded-lg p-1 relative max-w-full w-[90%] sm:w-[500px]">
 
       {/* Image Section */}
       <div className="relative group overflow-hidden rounded-xl shadow-xl border border-gray-700 bg-gradient-to-br from-[#1a1a1a] to-[#3d3d3d]">
-  {/* Background Image with Glassmorphism Effect */}
-  <div className="absolute inset-0 bg-black/30 rounded-xl backdrop-blur-lg group-hover:backdrop-blur-xl transition-all duration-500"></div>
-  <img
-    src="https://i.ibb.co/F0f03b7/standard-02.jpg"
-    alt="Special Offer"
-    className="w-[500px] h-[400px] object-cover rounded-xl transition-transform duration-500 group-hover:scale-110"
-  />
+        
+        {/* Glass Background Overlay */}
+        <div className="absolute inset-0 bg-black/30 rounded-xl backdrop-blur-lg group-hover:backdrop-blur-xl transition-all duration-500"></div>
+        
+        {/* Background Image */}
+        <img
+          src="https://i.ibb.co/F0f03b7/standard-02.jpg"
+          alt="Special Offer"
+          className="w-full h-[250px] sm:h-[400px] object-cover rounded-xl transition-transform duration-500 group-hover:scale-110"
+        />
 
+        {/* Neon Border Hover */}
+        <div className="absolute inset-0 border-2 border-transparent group-hover:shadow-[0_0_20px_#facc15] transition-all duration-500 rounded-xl"></div>
 
+        {/* Content Overlay */}
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-white bg-gradient-to-t from-black/90 via-black/50 to-transparent z-10 p-4 sm:p-6">
+          <div className="absolute top-0 left-0 w-full h-full bg-white opacity-5 group-hover:opacity-10 transition-opacity duration-500"></div>
 
-  {/* Neon Glow Border on Hover */}
-  <div className="absolute inset-0 border-2 border-transparent  group-hover:shadow-[0_0_20px_#facc15] transition-all duration-500 rounded-xl"></div>
+          {/* Heading */}
+          <h2 className="text-2xl sm:text-4xl font-extrabold uppercase tracking-wide text-primary drop-shadow-2xl animate-pulse text-center">
+            ⏲ Limited Time Deal!
+          </h2>
 
-  {/* Gradient Overlay with Shimmer Effect */}
-  <div className="absolute inset-0 flex flex-col items-center justify-center text-white bg-gradient-to-t from-black/90 via-black/50 to-transparent z-10 p-6">
-    <div className="absolute top-0 left-0 w-full h-full bg-white opacity-5 group-hover:opacity-10 transition-opacity duration-500"></div>
+          {/* Discount Text */}
+          <p className="text-sm sm:text-lg text-center mt-3 font-medium leading-relaxed text-gray-300 drop-shadow-md">
+            Get <span className="text-primary font-extrabold text-3xl sm:text-5xl glow">30% OFF</span> on your first booking.  
+            <br /> **Luxury & Comfort**
+          </p>
 
-    {/* Glowing Animated Heading */}
-    <h2 className="text-4xl font-extrabold uppercase tracking-wide text-primary drop-shadow-2xl animate-pulse">
-      ✨ Limited Time Deal!
-    </h2>
+          {/* CTA Button */}
+          <Link to="/allRooms">
+            <button className="bg-primary hover:bg-yellow-600 rounded-full text-white font-semibold mt-5 px-6 py-2 sm:px-8 sm:py-3 transition-all z-20">
+              Book Now 🎁
+            </button>
+          </Link>
+        </div>
+      </div>
 
-    {/* Fancy Discount Text with Animated Glow */}
-    <p className="text-lg text-center mt-3 font-medium leading-relaxed text-gray-300 drop-shadow-md">
-      Get <span className="text-primary font-extrabold text-5xl glow">30% OFF</span> on your first booking.  
-      <br /> **Luxury & Comfort**
-    </p>
-
-    {/* CTA Button with Hover Glow */}
-
-    <Link to="/allRooms">
-        <button className="  bg-primary hover:bg-primary rounded-full text-white font-semibold mt-5 px-8 py-3 transition-all absolute left-40  z-20">
-          Book Now ✨
-        </button>
-      </Link>
-  </div>
-</div>
-
-
-
-
-
-
-      {/*modal Close Button */}
+      {/* Close Button */}
       <button
-        className="absolute top-2 right-2 text-gray-500  z-20"
+        className="absolute top-2 right-2 text-gray-200 text-lg sm:text-xl z-20"
         onClick={closeModal}
       >
-        ✖
+        ✂
       </button>
-      {/* "Book Now" Button */}
-      
-
     </div>
   </div>
 )}
