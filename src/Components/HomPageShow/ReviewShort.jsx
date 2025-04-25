@@ -48,7 +48,7 @@ const ReviewShort = () => {
             useKeyboardArrows={true}
           >
             {reviews.map((review) => (
-              <div key={review._id} className="w-96 bg-white shadow-md rounded-lg p-4">
+              <div key={review._id} className="w-96 bg-white shadow-md rounded-lg border-[#af9556] border-2 p-4  ">
                 <p className="text-gray-800 text-lg font-semibold">{review.roomName}</p>
                 <p className="text-gray-800 text-sm font-semibold">{review.email}</p>
                 <p className="text-gray-600 my-2">{review.comment}</p>
