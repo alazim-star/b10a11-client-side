@@ -5,7 +5,7 @@ const Video = () => {
   return (
 <div className="lg:w-1/2 mt-10  ">
     
-   <SectionTitle subheading="Explore Our Luxurious Rooms"></SectionTitle>
+   <SectionTitle heading="Explore Our" subheading="Luxurious Rooms"></SectionTitle>
    <p className="text-center mb-4">Experience comfort and elegance</p>
 <div className="relative border border-primary  h-[500px] flex justify-center items-center p-5 rounded-xl">
       {/* Video Background */}
