@@ -11,7 +11,7 @@ const Navbar2 = () => {
   };
 
   return (
-    <div className="bg-[#af9556] text-white rounded-tr-[200px] rounded-tl-[200px] ">
+    <div className="bg-[#af9556] text-white rounded-tr-[85px] rounded-tl-[85px] ">
       {/* Contact and Address */}
       <div className=" flex flex-row lg:gap-4 items-center mx-auto container lg:ml-96 ">
         <p className="text-sm">

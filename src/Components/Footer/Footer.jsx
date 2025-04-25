@@ -9,7 +9,7 @@ const Footer = () => {
    
   return (
   
-        <footer className="bg-[#151515] text-white py-5 ">
+        <footer className="bg-[#151515] text-white py-5 rounded-bl-[85px] rounded-br-[85px] ">
           <div className="container mx-auto  grid grid-cols-1 md:grid-cols-4 gap-8">
             {/* Logo and Description */}
             <div>
