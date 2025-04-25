@@ -23,11 +23,12 @@ const Home = () => {
     <Outlet></Outlet>
      
        <Memory></Memory>
-       <ReviewShort></ReviewShort>
+      
       <div className='lg:flex lg:gap-5 container mx-auto'>
       <Map></Map>
    <Video></Video>
       </div>
+      <ReviewShort></ReviewShort>
        <HomePage></HomePage>
 
         </div>
