@@ -54,6 +54,7 @@ const Navbar1 = () => {
     <NavLink to="/contactUs" className="hover:text-[#af9556] transition mx-4">
       {t("contact_us")}
     </NavLink>
+    
   
    
   </>

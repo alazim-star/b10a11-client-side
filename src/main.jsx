@@ -74,7 +74,9 @@ const router = createBrowserRouter([
       },
       {
         path: "/about",
-        element: <About></About>,
+        element: 
+          <About></About>,
+      
         
       },
       {
@@ -82,7 +84,7 @@ const router = createBrowserRouter([
         element: <ContactUs></ContactUs>,
         
       },
-      
+  
     ]
   },
   
@@ -95,6 +97,7 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+
   <AuthProvider>
 <RouterProvider router={router} />
   </AuthProvider>

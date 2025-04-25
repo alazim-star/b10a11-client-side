@@ -45,11 +45,19 @@ const FeaturedRooms = () => {
             </div>
 
             {/* Display Rooms */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 mx-auto container gap-5">
-                {roomsToShow.map((room) => (
-                    <FeaturedRoomsCard key={room._id} room={room} rooms={rooms} setRooms={setRooms} />
-                ))}
-            </div>
+           {/* Display Rooms */}
+<div className="container mx-auto grid gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
+  {roomsToShow.map((room) => (
+    <div key={room._id} className="border-2 border-[#af9556] rounded-lg ">
+      <FeaturedRoomsCard
+        room={room}
+        rooms={rooms}
+        setRooms={setRooms}
+      />
+    </div>
+  ))}
+</div>
+
         </div>
     );
 };
